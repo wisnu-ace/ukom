@@ -39,9 +39,9 @@
             @foreach($transaction->items as $item)
             <tr>
                 <td>{{ $item->name }}</td>
-                <td>{{ $item->pivot->qty ?? 'N/A' }}</td>
-                <td>Rp {{ number_format($item->pivot->price ?? 0, 0, ',', '.') }}</td>
-                <td>Rp {{ number_format(($item->pivot->qty ?? 0) * ($item->pivot->price ?? 0), 0, ',', '.') }}</td>
+                <td>{{ $item->pivot->qty }}</td>
+                <td>Rp {{ number_format($item->pivot->price, 0, ',', '.') }}</td>
+                <td>Rp {{ number_format($item->pivot->qty * $item->pivot->price, 0, ',', '.') }}</td>
             </tr>
             @endforeach
         </tbody>

@@ -66,19 +66,19 @@
                             <div class="flex ">
                                 <label class="relative cursor-pointer mr-1">
                                     <input type="radio" name="payment_method" class="sr-only peer" value="credit" />
-                                    <div class="mr-1 ring-1 ring-indigo-300 px-4 py-2 object-cover border-2 border-transparent peer-checked:border-blue-500 peer-checked:ring-2 peer-checked:ring-indigo-500 rounded-md">
+                                    <div class="mr-1 ring-1 ring-green-600 px-4 py-2 object-cover border-2 border-transparent peer-checked:border-green-500 peer-checked:ring-2 peer-checked:ring-green-500 peer-checked:font-bold rounded-md">
                                         Kartu Kredit
                                     </div>
                                 </label>
                                 <label class="relative cursor-pointer mr-1">
                                     <input type="radio" name="payment_method" class="sr-only peer" value="debit" />
-                                    <div class="mr-1 ring-1 ring-indigo-300 px-4 py-2 object-cover border-2 border-transparent peer-checked:border-blue-500 peer-checked:ring-2 peer-checked:ring-indigo-500 rounded-md">
+                                    <div class="mr-1 ring-1 ring-green-600 px-4 py-2 object-cover border-2 border-transparent peer-checked:border-green-500 peer-checked:ring-2 peer-checked:ring-green-500 peer-checked:font-bold rounded-md">
                                         Kartu Debit
                                     </div>
                                 </label>
                                 <label class="relative cursor-pointer mr-1">
                                     <input type="radio" name="payment_method" class="sr-only peer" value="cod" />
-                                    <div class="mr-1 ring-1 ring-indigo-300 px-4 py-2 object-cover border-2 border-transparent peer-checked:border-blue-500 peer-checked:ring-2 peer-checked:ring-indigo-500 rounded-md">
+                                    <div class="mr-1 ring-1 ring-green-600 px-4 py-2 object-cover border-2 border-transparent peer-checked:border-green-500 peer-checked:ring-2 peer-checked:ring-green-500 peer-checked:font-bold rounded-md">
                                         Cash On Delivery
                                     </div>
                                 </label>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="float-right text-right">
                             <span class="font-base">Total (Termasuk Pajak)</span>
-                            <p class="font-bold text-2xl text-indigo-700">
+                            <p class="font-bold text-2xl text-green-700">
                                 Rp. @rupiah($carts->sum(fn($c) => $c->qty * $c->price))
                             </p>
                         </div>
