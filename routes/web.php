@@ -21,12 +21,15 @@ Route::middleware('auth')->group(function () {
         Route::post('{item}/add', [TransactionController::class, 'addCart'])->name('cart.add');
         Route::post('{item}/reduce', [TransactionController::class, 'reduceCart'])->name('cart.reduce');
     });
+
     Route::get('cart', [TransactionController::class, 'cart'])->name('transaction.cart');
     Route::resource('transaction', TransactionController::class);
+    Route::get('/transaction/{transaction}/pdf', [TransactionController::class, 'generatePDF'])->name('transaction.pdf');
 
     Route::middleware(AdminMiddleware::class)->group(function () {
         Route::resource('user', UserController::class);
     });
 });
+
 
 require __DIR__ . '/auth.php';

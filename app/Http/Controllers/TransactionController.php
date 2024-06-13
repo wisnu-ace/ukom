@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class TransactionController extends Controller
 {
@@ -89,7 +90,7 @@ class TransactionController extends Controller
         DB::beginTransaction();
         try {
             // get items in cart
-            $savedCart = collect($request->session()->get('cart'));
+            $savedCart = collect($request->session()->pull('cart'));
 
             // create new Transaction instance
             $transaction = $request->user()->transaction()->create([
@@ -107,13 +108,13 @@ class TransactionController extends Controller
             });
 
             // clear cart
-            $request->session()->forget('cart');
-            $request->session()->flush();
+            // $request->session()->forget('cart');
+            // $request->session()->flush();
 
             // commit save to database
             DB::commit();
 
-            return redirect()->route('transaction.index')->with('success', 'Berhasil membuat transaksi');
+            return $this->index($request);
         } catch (Exception $e) {
             // rollback if something wrong happened
             DB::rollBack();
@@ -121,6 +122,12 @@ class TransactionController extends Controller
         }
     }
 
+    public function generatePDF(Transaction $transaction)
+    {
+        $transaction->load('items');
+        $pdf = PDF::loadView('pdf.transaction', compact('transaction'));
+        return $pdf->download('transaction-' . $transaction->id . '.pdf');
+    }
     /**
      * Display the specified resource.
      */

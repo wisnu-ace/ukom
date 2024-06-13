@@ -4,15 +4,13 @@
     <div class="w-full flex justify-end gap-2">
         <form action="{{ route('cart.reduce', $cart) }}" method="POST">
             @csrf
-            <button type="submit"
-                class="w-6 text-center py-1 bg-red-600 text-white border border-transparent rounded-md font-semibold text-xs text-white tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150">
+            <button type="submit" class="w-6 text-center py-1 bg-red-600 text-white border border-transparent rounded-md font-semibold text-xs text-white tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150">
                 -
             </button>
         </form>
         <form action="{{ route('cart.add', $cart) }}" method="POST">
             @csrf
-            <button type="submit"
-                class="w-6 text-center py-1 bg-indigo-600 text-white border border-transparent rounded-md font-semibold text-xs text-white tracking-widest hover:bg-indigo-500 active:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+            <button type="submit" class="w-6 text-center py-1 bg-green-600 text-white border border-transparent rounded-md font-semibold text-xs text-white tracking-widest hover:bg-green-500 active:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
                 +
             </button>
         </form>
