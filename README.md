@@ -16,7 +16,8 @@ Wisnu Aryo Sulistiono
 -   npm install
 -   npm run dev
 
-6. Buka terminal/bash window baru di directory yang sama, ketik dan enter:
+6. Update databasenya di phpmyadmin, file nya bernama laravel.sql ada di root folder project ini
+7. Buka terminal/bash window baru di directory yang sama, ketik dan enter:
 
 -   php artisan serve
 
